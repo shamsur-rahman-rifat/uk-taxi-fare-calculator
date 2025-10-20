@@ -123,18 +123,21 @@ const FareCalculator = () => {
     <div className="container-fluid py-4 py-md-5" style={{ backgroundColor: '#000', minHeight: '100vh' }}>
       <div className="row justify-content-center">
         <div className="col-12 col-lg-10 col-xl-9">
-          {/* Header with Logo */}
+          {/* Header */}
           <div className="text-center mb-4 mb-md-5">
-            <img 
-              src="https://www.dastaxis.co.uk/wp-content/uploads/2025/05/Das-Taxis-Logo-scaled.png" 
-              alt="Das Taxis Logo" 
-              className="mb-4"
-              style={{ 
-                height: '80px', 
-                objectFit: 'contain',
-                filter: 'drop-shadow(0 4px 12px rgba(255, 193, 7, 0.3))'
-              }}
-            />
+            <div className="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" 
+                 style={{ 
+                   width: '80px', 
+                   height: '80px', 
+                   backgroundColor: '#FFC107',
+                   boxShadow: '0 8px 24px rgba(255, 193, 7, 0.3)'
+                 }}>
+              <img 
+                src="https://www.dastaxis.co.uk/wp-content/uploads/2025/05/Das-Taxis-Logo-scaled.png"
+                alt="Das Taxis Logo"
+                style={{ width: '80px', height: 'auto', borderRadius: '8px', objectFit: 'contain' }}
+              />
+            </div>
             <h1 className="h2 mb-2 fw-bold" style={{ color: '#FFC107' }}>UK Taxi Fare Calculator</h1>
             <p className="text-white-50 mb-0">Get instant fare estimates for your journey across the UK</p>
           </div>
