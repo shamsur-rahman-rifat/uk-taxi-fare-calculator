@@ -24,18 +24,4 @@ app.use(limiter);
 
 app.use('/api', router);
 
-
-// Serve static files from the React app
-app.use(express.static(resolve(__dirname, 'client', 'dist')));
-
-// Serve React front end for all routes not handled by the API
-app.get(/(.*)/, (req, res, next) => {
-  if (req.path.startsWith('/api')) {
-    // If route starts with /api but no handler matched, pass to next middleware (404)
-    return next();
-  }
-  // Otherwise serve React app
-  res.sendFile(resolve(__dirname, 'client', 'dist', 'index.html'));
-});
-
 export default app;
