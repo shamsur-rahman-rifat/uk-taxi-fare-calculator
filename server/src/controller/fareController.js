@@ -68,7 +68,8 @@ export const calculateFare = async (req, res) => {
     // Optimization 4: Use Set.has() for faster lookups (O(1) vs O(n))
     const inFife = startComponents.has('fife') && destComponents.has('fife');
     const inScotland = startComponents.has('scotland') || destComponents.has('scotland');
-
+    const inUK = startComponents.has('uk') || destComponents.has('uk');
+    
     // Optimization 5: Combine stage and rate determination
     let stage, rate;
     if (inFife && isDaytime) {
@@ -77,9 +78,12 @@ export const calculateFare = async (req, res) => {
     } else if (inScotland) {
       stage = 2;
       rate = 3.1;
-    } else {
+    } else if (inUK) {
       stage = 3;
       rate = 2.75;
+    }
+    else {
+      console.log('Location Not Valid');
     }
 
     console.log('✅ Final Stage:', stage, 'Rate:', rate);
